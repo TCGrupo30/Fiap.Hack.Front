@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class UploadService {
+export class VideoProcessingService {
 
   constructor(private httpClient: HttpClient) { }
 

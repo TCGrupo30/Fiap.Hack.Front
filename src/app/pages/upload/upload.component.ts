@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { DropAreaComponent } from '../../components/drop-area/drop-area.component';
 import {MatButtonModule} from '@angular/material/button';
-import { UploadService } from '../../services/upload.service';
+import { UploadService } from '../../services/video-processing.service';
 import { UploadModel } from '../../models/upload.model';
 
 @Component({
