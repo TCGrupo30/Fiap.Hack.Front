@@ -24,18 +24,6 @@ export class VideoProcessingService {
   }
 
   public getAll(): Observable<VideoProcessModel[]> {
-    //return this.httpClient.get<VideoProcessModel[]>(``);
-
-    // ...:: Mock ::...
-    const ELEMENT_DATA: VideoProcessModel[] = [
-      {
-        id: 'WERTYUIASD',
-        inputName: 'Vídeo ex.mp4',
-        outputName: 'Video.zip',
-        status: 'processamento',
-      },
-    ];
-
-    return of(ELEMENT_DATA);
+    return this.httpClient.get<VideoProcessModel[]>(`${this.url}/GetAllVideos`);
   }
 }

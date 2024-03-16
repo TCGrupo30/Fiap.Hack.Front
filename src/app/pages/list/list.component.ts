@@ -17,7 +17,7 @@ import { Route, Router } from '@angular/router';
 })
 export class ListComponent implements OnInit, OnDestroy {
 
-  displayedColumns: string[] = ['id', 'inputName', 'outputName', 'status', 'actions'];
+  displayedColumns: string[] = ['videoId', 'nameZip', 'pathZip', 'actions'];
   dataSource = new MatTableDataSource<VideoProcessModel>();
 
   private subscription: Subscription;
