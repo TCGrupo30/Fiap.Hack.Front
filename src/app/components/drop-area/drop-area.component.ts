@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild, ViewContainerRef } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -11,6 +11,10 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './drop-area.component.scss',
 })
 export class DropAreaComponent {
+
+  @ViewChild('fileInput', { read: ViewContainerRef })
+  fileInput?: ViewContainerRef
+
   @Output() filesDropped: EventEmitter<File[]> = new EventEmitter<File[]>();
   @Input('text') text =
     'Arraste e solte arquivos aqui ou clique para selecionar';
@@ -39,7 +43,6 @@ export class DropAreaComponent {
     this.highlightDropArea(false);
 
     const files = event.dataTransfer?.files;
-
     if (!files) return;
     this.handleFiles(files);
   }
@@ -53,11 +56,17 @@ export class DropAreaComponent {
     event.preventDefault();
     event.stopPropagation();
     this.files = [];
+
+    const fileInput = this.fileInput?.element.nativeElement;
+
+    if (this.fileInput?.element.nativeElement?.value) {
+      fileInput.value = '';
+    }
+
     this.filesDropped.emit(this.files);
   }
 
   private handleFiles(files: FileList): void {
-
     if(this.isLoading) return;
 
     this.files = [];
