@@ -3,13 +3,14 @@ import { UploadModel } from '../models/upload.model';
 import { HttpClient } from '@angular/common/http';
 import { EMPTY, Observable, of } from 'rxjs';
 import { VideoProcessModel } from '../models/video-process.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VideoProcessingService {
 
-  url = 'https://localhost:7174/Video'
+  url = `${environment.apiUrl}`;
 
   constructor(private httpClient: HttpClient) { }
 
