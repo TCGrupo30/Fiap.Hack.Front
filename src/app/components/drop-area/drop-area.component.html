@@ -1,0 +1,35 @@
+<div
+  id="drop-area"
+  (click)="fileInput.click()"
+  (dragover)="onDragOver($event)"
+  (dragleave)="onDragLeave($event)"
+  (drop)="onDrop($event)"
+  class="drop-area"
+>
+  <svg
+    viewBox="232.374 97.797 62.23 77.788"
+    width="62.23"
+    height="77.788"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M 271.267 97.797 L 240.153 97.797 C 238.096 97.805 236.126 98.628 234.675 100.086 C 233.224 101.545 232.41 103.519 232.413 105.576 L 232.374 167.806 C 232.371 169.863 233.185 171.837 234.636 173.296 C 236.087 174.754 238.057 175.577 240.114 175.585 L 286.825 175.585 C 288.887 175.579 290.862 174.758 292.32 173.3 C 293.777 171.842 294.599 169.867 294.604 167.806 L 294.604 121.134 L 271.267 97.797 Z M 286.825 167.806 L 240.153 167.806 L 240.153 105.576 L 267.374 105.576 L 267.374 125.023 L 286.825 125.023 L 286.825 167.806 Z M 247.931 148.398 L 253.415 153.882 L 259.599 147.737 L 259.599 163.917 L 267.374 163.917 L 267.374 147.737 L 273.558 153.921 L 279.046 148.398 L 263.528 132.798 L 247.931 148.398 Z"
+      style="fill: rgb(255, 215, 64)"
+      transform="matrix(1, 0, 0, 1, 0, 7.105427357601002e-15)"
+    />
+  </svg>
+  <p *ngIf="files.length === 0">{{ text }}</p>
+  <div *ngFor="let file of files" class="file-item">
+    {{ file.name }}
+  </div>
+  <input
+    #fileInput
+    type="file"
+    (change)="onFileSelected($event)"
+    accept="{{ extensions }}"
+    class="file-input"
+  />
+  <button *ngIf="files.length > 0" mat-icon-button aria-label="Limpar conteúdo" (click)="clean($event)">
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>

@@ -1,0 +1,10 @@
+<div class="container">
+
+    <h1>Upload</h1>
+
+    <form>
+        <app-drop-area extensions=".mp4" text="{{ msgDropArea }}" (filesDropped)="onFilesDropped($event)"></app-drop-area>
+
+        <button mat-flat-button color="primary" (click)="onSend()" [disabled]="!this.hasFileSelected" style="width: 100%; margin-top: 16px;">Enviar</button>
+    </form>
+</div>
