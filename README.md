@@ -2,6 +2,8 @@
 
 Projeto desenvolvido como cliente web para uma ferramenta de processamento de vídeos. Nele, o vídeo é submetido ao nosso serviço e o resultado do processamento é um conjunto de imagens correspondentes a esse vídeo.
 
+![plot](./docs/DesenhoArquiteturaHack.png)
+
 # Funcionalidades 
 
 ### Upload do vídeo
