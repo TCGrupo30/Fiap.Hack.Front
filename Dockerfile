@@ -1,14 +1,15 @@
-FROM node:alpine AS builder
+FROM node:20.11.1 AS builder
 
 WORKDIR /app
 
 COPY package.json package-lock.json ./
 
+RUN npm install -g @angular/cli
 RUN npm install
 
 COPY . .
 
-RUN npm run build -- --prod
+RUN node --max-old-space-size=8192 /usr/local/bin/ng build
 
 FROM nginx:alpine
 
