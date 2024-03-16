@@ -6,6 +6,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { VideoProcessModel } from '../../models/video-process.model';
 import { VideoProcessingService } from '../../services/video-processing.service';
 import { Subscription, interval } from 'rxjs';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -22,7 +23,7 @@ export class ListComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
   recoveryTime = 30000;
 
-  constructor(private videoProcessingService: VideoProcessingService, private snackBar: MatSnackBar){
+  constructor(private router: Router, private videoProcessingService: VideoProcessingService, private snackBar: MatSnackBar){
 
     this.subscription = interval(this.recoveryTime).subscribe(() => {
       this.load();
@@ -49,5 +50,9 @@ export class ListComponent implements OnInit, OnDestroy {
         this.snackBar.open('Houve um problema de comunicação', 'OK');
       }
     });
+  }
+
+  send() {
+    this.router.navigate(['upload']);
   }
 }

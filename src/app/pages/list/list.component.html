@@ -3,6 +3,7 @@
     Os vídeos que foram processados foram convertidos em imagens, extraindo as
     cenas.
   </h1>
+  <button (click)="send()" style="margin-bottom: 32px;" mat-flat-button color="accent">Enviar novo vídeo</button>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z1">
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef>Id</th>
