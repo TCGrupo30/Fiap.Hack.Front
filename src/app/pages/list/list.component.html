@@ -1,0 +1,47 @@
+<div class="container">
+  <h1>
+    Os vídeos que foram processados foram convertidos em imagens, extraindo as
+    cenas.
+  </h1>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z1">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>Id</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="inputName">
+      <th mat-header-cell *matHeaderCellDef>Arquivo</th>
+      <td mat-cell *matCellDef="let element">{{ element.inputName }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="outputName">
+      <th mat-header-cell *matHeaderCellDef>Arquivo de saída</th>
+      <td mat-cell *matCellDef="let element">{{ element.outputName }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element" class="tar">
+        <button mat-icon-button matTooltip="Download">
+          <mat-icon>file_download</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">Nenhum dado correspondente</td>
+    </tr>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <p style="font-size: 10pt; font-style: italic; margin-top: 16px">
+    * Por favor, aguarde enquanto seu vídeo está sendo processado. Você poderá
+    fazer o download assim que o status for marcado como concluído.
+  </p>
+</div>
