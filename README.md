@@ -1,27 +1,56 @@
-# HackFrontUpload
+# Hack.Front
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
+Projeto desenvolvido como cliente web para uma ferramenta de processamento de vídeos. Nele, o vídeo é submetido ao nosso serviço e o resultado do processamento é um conjunto de imagens correspondentes a esse vídeo.
+
+# Funcionalidades 
+
+### Upload do vídeo
+
+Atualmente, os usuários podem enviar seus vídeos para serem processados em imagens. O resultado será um arquivo .zip contendo todas as imagens correspondentes ao vídeo.
+
+* Passo 01
+  
+  Escolha o arquivo de vídeo desejado arrastando-o para a área destacada ou clicando no contêiner:
+  ![plot](./docs/imgs/img02.png)
+
+* Passo 02
+  
+  Pressione o botão "Enviar" para submeter o arquivo para processamento e aguarde até que o envio seja concluído:
+
+  ![plot](./docs/imgs/img04.png)
+
+  O progresso do envio será exibido no item designado.
+
+* Passo 03
+  
+  Após o envio ser concluído com sucesso, uma mensagem será exibida e você será redirecionado para a tela de download:
+
+  ![plot](./docs/imgs/img03.png)
+
+### Download
+
+* Passo 01
+  
+  Na lista de downloads, por favor, aguarde até que o vídeo seja processado e o download seja liberado:
+
+  ![plot](./docs/imgs/img05.png)
+
+## Arquitetura frontend
+
+Para desenvolver nosso cliente, optamos pelo framework Angular, que opera como uma aplicação de página única (SPA).
+
+![plot](./docs/imgs/img06.png)
+
+* Angular 17+
+* Angular material 17+
+
+![plot](./docs/imgs/img07.png)
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Execute `ng serve` para subir o servidor de desenvolvimento. Navegue para `http://localhost:4200/`.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Execute `ng build` para construir o projeto. Os artefatos de construção serão armazenados no diretório `dist/`.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
