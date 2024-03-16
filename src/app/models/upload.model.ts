@@ -1,3 +1,3 @@
 export interface UploadModel {
-    video: File | undefined
+    fileVideo: File | undefined
 }

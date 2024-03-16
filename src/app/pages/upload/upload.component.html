@@ -5,6 +5,6 @@
     <form>
         <app-drop-area [isLoading]="isLoading" extensions=".mp4" text="{{ msgDropArea }}" (filesDropped)="onFilesDropped($event)"></app-drop-area>
         <mat-progress-bar style="margin-top: 8px;" mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
-        <button mat-flat-button color="primary" (click)="onSend($event)" [disabled]="!this.hasFileSelected" style="width: 100%; margin-top: 16px;">Enviar</button>
+        <button mat-flat-button color="primary" (click)="onSend($event)" [disabled]="!this.hasFileSelected || isLoading" style="width: 100%; margin-top: 16px;">Enviar</button>
     </form>
 </div>

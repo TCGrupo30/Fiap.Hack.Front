@@ -53,7 +53,7 @@ export class UploadComponent {
     }
 
     const upload: UploadModel = {
-      video: this.fileSelected,
+      fileVideo: this.fileSelected,
     };
 
     this.videoProcessingService.send(upload).subscribe({

@@ -9,18 +9,18 @@ import { VideoProcessModel } from '../models/video-process.model';
 })
 export class VideoProcessingService {
 
+  url = 'https://localhost:7174/Video'
+
   constructor(private httpClient: HttpClient) { }
 
   public send(upload: UploadModel): Observable<any> {
     const formData = new FormData();
 
-    if(!upload.video) return EMPTY;
+    if(!upload.fileVideo) return EMPTY;
 
-    formData.append('FormFile', upload.video, upload.video?.name);
+    formData.append('FileVideo', upload.fileVideo, upload.fileVideo?.name);
 
-    //return this.httpClient.post(``, formData);
-
-    return of('OK');
+    return this.httpClient.post(this.url, formData);
   }
 
   public getAll(): Observable<VideoProcessModel[]> {
