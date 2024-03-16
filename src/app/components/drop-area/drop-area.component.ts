@@ -15,6 +15,7 @@ export class DropAreaComponent {
   @Input('text') text =
     'Arraste e solte arquivos aqui ou clique para selecionar';
   @Input('extensions') extensions: string = '*.*';
+  @Input() isLoading = false;
 
   files: File[] = [];
 
@@ -56,6 +57,9 @@ export class DropAreaComponent {
   }
 
   private handleFiles(files: FileList): void {
+
+    if(this.isLoading) return;
+
     this.files = [];
     for (let i = 0; i < files.length; i++) {
       const file = files[i];

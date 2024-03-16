@@ -28,6 +28,7 @@
     (change)="onFileSelected($event)"
     accept="{{ extensions }}"
     class="file-input"
+    [readOnly]="isLoading"
   />
   <button *ngIf="files.length > 0" mat-icon-button aria-label="Limpar conteúdo" (click)="clean($event)">
     <mat-icon>delete</mat-icon>

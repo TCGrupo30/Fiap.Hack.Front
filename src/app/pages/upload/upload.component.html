@@ -3,8 +3,8 @@
     <h1>Upload</h1>
 
     <form>
-        <app-drop-area extensions=".mp4" text="{{ msgDropArea }}" (filesDropped)="onFilesDropped($event)"></app-drop-area>
-
-        <button mat-flat-button color="primary" (click)="onSend()" [disabled]="!this.hasFileSelected" style="width: 100%; margin-top: 16px;">Enviar</button>
+        <app-drop-area [isLoading]="isLoading" extensions=".mp4" text="{{ msgDropArea }}" (filesDropped)="onFilesDropped($event)"></app-drop-area>
+        <mat-progress-bar style="margin-top: 8px;" mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+        <button mat-flat-button color="primary" (click)="onSend($event)" [disabled]="!this.hasFileSelected" style="width: 100%; margin-top: 16px;">Enviar</button>
     </form>
 </div>
