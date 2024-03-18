@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  fiaphackfront:
+    image: josebr1/fiaphackfront
+    ports:
+      - "8888:80"

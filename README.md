@@ -2,6 +2,8 @@
 
 Projeto desenvolvido como cliente web para uma ferramenta de processamento de vídeos. Nele, o vídeo é submetido ao nosso serviço e o resultado do processamento é um conjunto de imagens correspondentes a esse vídeo.
 
+Link para projeto backend: https://github.com/TCGrupo30/Hackathon.Backend.NETT/tree/master
+
 ![plot](./docs/DesenhoArquiteturaHack.png)
 
 # Funcionalidades 
